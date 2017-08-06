@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Levente Kurusa academic website">
+    <meta name="author" content="Levente Kurusa">
+
+    <title>Levente Kurusa's website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    .profile-pic {
+	    padding-right: 70px;
+	    width: 25%;
+	    float: left;
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+		<span class="navbar-brand">Menu</span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Research</a>
+                    </li>
+                    <li>
+                        <a href="./publications.html">Publications</a>
+                    </li>
+                    <li>
+                        <a href="./readings.html">Favorite readings</a>
+                    </li>
+                    <li>
+                        <a href="./pintos.html">Pintos things</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">Open Source</a>
+                    </li>
+                    <li>
+                        <a href="#">Links</a>
+		    </li> -->
+                    <li>
+                        <a href="./helwyr.html">Helwyr kernel</a>
+		    </li>
+                    <li>
+                        <a href="./notes/">Notes</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h1>My research</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+	<a href="lkurusa_research_stmt.pdf">My research manifesto</a>
+
+	<p class="lead">Research interests</p>
+	<ul class="list">
+		<li>Operating systems, their design and implementation</li>
+		<li>Multicore systems</li>
+		<li>NUMA systems</li>
+		<li>Verifiably correct concurrency</li>
+		<li>Low-level performance engineering</li>
+	</ul>
+
+	<p class="lead">On-going projects</p>
+	<ul class="list">
+		<li>kDuck: Duck-typed kernel modules for Linux</li>
+		<li>NUMA-aware, lockless, transactional kernel communication method</li>
+		<li>NUMA-aware kernel module scheduling and inter-CPU/RAM moving</li>
+		<li>A Lisp implementation specifically designed for low-level engineering</li>
+	</ul>
+
+	<p class="lead">Lower priority projects</p>
+	<ul class="list">
+		<li>Getting QR codes to display when the Linux kernel crashes
+			<ul>
+			<li>Together with two engineers from Intel</li>
+			</ul></li>
+	</ul>
+
+	<p class="lead">Hobby projects that may lead to new research</p>
+	<ul class="list">
+		<li>UNIX-like, hobby operating system kernel written in C and x86 assembly
+			<ul>
+			<li>Monolithic preemptive kernel with paging. Userspace in Ring 3.</li>
+			<li>Runs gcc, binutils, dash, and getty</li>
+			<li>Simple TCP/UDP/ICMP/ARP/IP stack over Ethernet</li>
+			<li>Berkeley socket interface</li>
+			<li>POSIX compatibility</li>
+			<li>ANSI video terminal</li>
+			</ul></li>
+	</ul>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
