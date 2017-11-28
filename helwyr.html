@@ -105,27 +105,254 @@
             </div>
         </div>
 
-	<p class="lead">Helwyr is a UNIX-like, (aiming to be) POSIX-compatible, from-scratch hobbyist operating system kernel</p>
-	<p class="lead">This is how it looks today</p>
-	<img class="img-fluid" width="50%" src="helwyr/today.png">
+	<p class="lead">Helwyr is a UNIX-like, (aiming to be) POSIX-compatible, from-scratch hobbyist operating system kernel.</p>
+  <p class="lead">The source code can be found on <a href="https://github.com/levex/levos7">GitHub</a>!</p>
+	<p class="lead">This is how it looks today:</p>
+  <table>
+    <tr>
+      <td width="50%">
+        <img class="img-fluid" width="100%" src="helwyr/today.png">
+      </td>
+      <td width="50%">
+        <center>
+        <h5>This screenshot shows that Helwyr is able to run a
+          couple of interesting applications, including the default shell of
+          Ubuntu, dash, with working shebangs. It's also running GCC 6.2.0
+          and binutils 2.27 to compile a simple, Hello World program written in C.
+          <br />
+          From the screenshot, it is also obvious that Helwyr supports filesystems
+          with write capabilities, too! Currently, only ext2 is supported and
+          the write support is experimental, while the read support is considered
+          quite stable.
+        </h5>
+        </center>
+      </td>
+    </tr>
+  </table>
+
 	<div class="form-group"> &nbsp; </div>
 	<p class="lead">A few gifs:</p>
-	<img class="img-fluid" width="50%" src="helwyr/helwyr_ncurses.gif"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/helwyr_vga_2048.gif"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/levos7_virt_terminals.gif"> <div class="form-group"> &nbsp; </div>
-	<div class="form-group"> &nbsp; </div>
+  <table>
+    <tr>
+      <td width="50%">
+        	<img class="img-fluid" width="100%" src="helwyr/helwyr_ncurses.gif">
+      </td>
+      <td width="50%">
+      <center>
+        <h5>
+          In this animation, we are testing out multiple important parts of
+          Helwyr. First, we see the use of the VGA-powered virtual terminals,
+          in Linux these are accessible usually via <code>Ctrl+Alt+F1-7</code>. We also test
+          the ncurses port, by first defining that the terminal is xterm-compatible.
+          This is because, by default, Helwyr's virtual terminals implement a subset
+          of the original ANSI escape sequences that are xterm-compatible. With this,
+          we can tell ncurses to run a simple Hello World example that just outputs
+          Hello World in the middle of the screen. Later, we stress test the escape
+          sequence support by playing a terminal version of the (in)famous 2048 game.
+        </h5>
+      </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+        <img class="img-fluid" width="100%" src="helwyr/helwyr_vga_2048.gif">
+      </td>
+      <td width="50%">
+      <center>
+        <h5>
+          Following on, we play the terminal version of the game 2048 to stress
+          test the Virtual Terminal support along with its escape sequences.
+        </h5>
+      </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+        <img class="img-fluid" width="100%" src="helwyr/levos7_virt_terminals.gif">
+      </td>
+      <td>
+        <center>
+          <h5>
+            In this recording, we show that Helwyr supports multiple virtual terminals.
+            Switching between them is possible via <code>Alt+NUM</code>, where
+            <code>NUM</code> is the virtual terminal to switch to. The terminals
+            are also exposed as device files, like in Linux, as <code>/dev/ttyNUM</code>
+          </h5>
+        </center>
+      </td>
+    </tr>
+  </table>
+  <div class="form-group"> &nbsp; </div>
 	<p class="lead">Here are a couple, collected screenshots:</p>
-	<img class="img-fluid" width="50%" src="helwyr/01.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/02.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/03.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/04.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/05.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/06.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/07.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/08.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/09.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/10.png"> <div class="form-group"> &nbsp; </div>
-	<img class="img-fluid" width="50%" src="helwyr/11.png"> <div class="form-group"> &nbsp; </div>
+  <table>
+    <tr>
+      <td width="50%">
+        <img class="img-fluid" width="100%" src="helwyr/01.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            This is the earliest screenshot I could find, showing basic paging,
+            a keyboard driver and a very basic <code>panic</code> functionality.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/02.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            Woohoo, this is an Ethernet driver in Helwyr! It shows that Helwyr
+            was able to determine that a PCI device is an E1000 compatible Ethernet
+            card, the driver then proceeds to read the MAC address from the EEPROM.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/03.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            This screenshot shows that debugging Helwyr via GDB is possible, thanks
+            to qemu. The stack trace is Helwyr constructing a UDP packet to test
+            the driver. I used Wireshark to capture the packet on a bridge, this way
+            I could confirm that the packet was indeed sent and the E1000 driver
+            was performing well.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/04.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            This screenshot is from "the other side". It's on my laptop. Running
+            a simple TCP server written in Python in about 23 seconds. We can see
+            that Helwyr has successfully established a TCP connection to this
+            server, and has sent it a simple text message.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/05.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            This is an early screenshot showing that the famous, system call
+            <code>fork(2)</code> works on Helwyr as well as the <code>pipe(2)</code>
+            system call works, too, having created a pipe between the parent
+            and child processes.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/06.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            Struggling to get a C++ runtime working. For some reason, C++ decided
+            to allocate too much RAM, and a bug in the virtual memory subsystem
+            created an infinite loop that exhausted the kernel memory. This screenshot
+            is also a nice example of the advanced (Linux-like) stack traces the
+            kernel produces on a <code>panic</code>.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/07.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            The first, working run of a native assembler! This is from the GNU
+            binutils package, version 2.27.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/08.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            Trying to assemble a simple test file that contained a hello world
+            example. Many bugs in the VFS and the ext2 driver were found!
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/09.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            Running the <code>readelf</code> utility from the binutils package
+            on a freshly compiled executable!
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/10.png">
+      </td>
+      <td>
+        <center>
+          <h5>
+            A screenshot from the weeks of struggling in order to get GCC running.
+            I was really determined to get GCC to work as that was my first real
+            milestone. It was worth it.
+          </h5>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <div class="form-group"> &nbsp; </div>
+      	<img class="img-fluid" width="100%" src="helwyr/11.png"> <
+      </td>
+      <td>
+        <center>
+          <h5>
+          I broke qemu!
+          </h5>
+        </center>
+      </td>
+    </tr>
+  </table>
+	<div class="form-group"> &nbsp; </div>
 
         <!-- /.row -->
     </div>
